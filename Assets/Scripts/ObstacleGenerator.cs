@@ -10,6 +10,11 @@ public class ObstacleGenerator : MonoBehaviour
     public float maxDis = 5;
     public int numOfSquare = 4;
 
+    private void Start()
+    {
+
+    }
+
     public void Generate(Vector3 spawnPos)
     {
         for (int i = 0; i < numOfSquare; i++)

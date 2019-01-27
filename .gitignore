@@ -1,2 +1,6 @@
 Library/
 Packages/
+*.csproj
+*.sln
+Temp/
+obj/

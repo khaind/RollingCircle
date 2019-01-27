@@ -272,6 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 318430503}
   - component: {fileID: 318430504}
+  - component: {fileID: 318430505}
   m_Layer: 0
   m_Name: ObstacleGenerator
   m_TagString: Untagged
@@ -298,7 +299,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 318430502}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27697f82c1b3141c5a5285529326d087, type: 3}
   m_Name: 
@@ -308,6 +309,21 @@ MonoBehaviour:
   minDis: 4
   maxDis: 9
   numOfSquare: 3
+--- !u!114 &318430505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318430502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55dccf32632614f1e8fd3c6f29556724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 1888718441029400, guid: 9da00205ba1d54b6a89b80f405d73395,
+    type: 2}
+  amountToPool: 8
 --- !u!1 &456816887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,6 +1310,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 1406821247}
   squares: []
+  minDis: 3.5
+  maxDis: 6
 --- !u!1 &1091117131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,6 +2007,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 1011468188}
   squares: []
+  minDis: 3.5
+  maxDis: 6
 --- !u!1 &1435332158
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,7 +2363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1654116434
 Transform:
   m_ObjectHideFlags: 0
@@ -2404,7 +2424,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723190514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25, y: 0, z: 0}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1277815690}
@@ -2442,7 +2462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e642687e633d47e0a4ea85bd868bfbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 7
+  jumpForce: 6.5
   moveSpeed: 3
   usr: {fileID: 11400000, guid: 2f1d27869d83d45e78b236121dc42a00, type: 2}
 --- !u!58 &1723190518
