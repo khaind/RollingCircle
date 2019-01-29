@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
+    public GameObject player;
+
     Transform playerTranform;
 
     void Awake()
     {
-        playerTranform = GameObject.Find("Player").transform;
+        Debug.Assert(player != null);
+        playerTranform = player.transform;
     }
 
     // Update is called once per frame

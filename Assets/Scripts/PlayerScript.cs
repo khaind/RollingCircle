@@ -19,6 +19,7 @@ public class PlayerScript : MonoBehaviour
         usr.name = "Khai Nguyen";
         usr.score = 0;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -48,7 +49,7 @@ public class PlayerScript : MonoBehaviour
         var translation = Input.GetAxis("Horizontal") * moveSpeed;
 #endif
         Vector2 velocity = rb.velocity;
-        velocity.x = moveSpeed;
+        velocity.x = translation;
         rb.velocity = velocity;
     }
 
@@ -63,7 +64,7 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collide with " + collision.gameObject.name);
+        //Debug.Log("Collide with " + collision.gameObject.name);
         if (collision.gameObject.name.Contains("Square"))
         {
             //Debug.Log("User killed with score = " + usr.score);

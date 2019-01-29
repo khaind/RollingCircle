@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class PauseResumeScript : MonoBehaviour {
 
-    GameObject pausePanel;
-    GameObject controlPanel;
+    public GameObject pausePanel;
+    public GameObject controlPanel;
     bool isGamePaused = false;
 
     private void Awake()
     {
-        pausePanel = GameObject.Find("PausePanel");
-        controlPanel = GameObject.Find("ControlPanel");
-
         Debug.Assert(pausePanel != null);
         Debug.Assert(controlPanel != null);
     }

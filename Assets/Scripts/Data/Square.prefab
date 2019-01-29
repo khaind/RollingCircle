@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMin: 0.5
   scaleMax: 1
+  player: {fileID: 0}
 --- !u!212 &212606635932307306
 SpriteRenderer:
   m_ObjectHideFlags: 1

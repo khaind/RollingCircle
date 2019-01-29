@@ -42,6 +42,7 @@ public class ScoreScript : MonoBehaviour {
 
 
     // Post user score to leaderboard services
+    // TODO UnityWebRequest initialization might be incorrect currently
     IEnumerator PostScore()
     {
         Debug.Log("Posting score to leaderboard service");

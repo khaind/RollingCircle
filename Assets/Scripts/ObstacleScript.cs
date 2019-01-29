@@ -8,12 +8,11 @@ public class ObstacleScript : MonoBehaviour
 {
     public float scaleMin = 0.6f;
     public float scaleMax = 1f;
-    //public User usr;
+    public GameObject player;
 
     private Rigidbody2D rb;
     Camera mainCam;
     BoxCollider2D squareCollider;
-    GameObject player;
 
     // Use this for initialization
     void Start()
@@ -24,9 +23,6 @@ public class ObstacleScript : MonoBehaviour
         mainCam = Camera.main;
 
         squareCollider = gameObject.GetComponentInChildren<BoxCollider2D>();
-
-        player = GameObject.Find("Player");
-
     }
 
     private void OnEnable()

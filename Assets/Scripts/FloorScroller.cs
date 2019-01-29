@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FloorScroller : MonoBehaviour {
-    public GameObject other;
-    public GameObject[] squares;
 
-    //ObstacleGenerator obstacleGenertor;
+    public GameObject otherFloor;
+    public GameObject player;
+    public GameObject obstaclePool;
 
-    GameObject player;
     float floorLength;
     
     const int NUM_OF_CHILD = 5;
@@ -20,11 +19,9 @@ public class FloorScroller : MonoBehaviour {
 
     private void Awake()
     {
-        player = GameObject.Find("Player");
-        //obstacleGenertor = GameObject.Find("ObstacleGenerator").GetComponent<ObstacleGenerator>();
         Debug.Assert(player != null);
 
-        numOfSquare = GameObject.Find("ObstacleGenerator").GetComponent<ObstaclePooler>().amountToPool / 2;
+        numOfSquare = obstaclePool.GetComponent<ObstaclePooler>().amountToPool / 2;
     }
 
     // Use this for initialization
@@ -40,9 +37,9 @@ public class FloorScroller : MonoBehaviour {
         // Start moving previous floor behind
         if (IsPlayerNearEndFloor())
         {
-            other.transform.localPosition = transform.localPosition + new Vector3(25.12f, 0, 0f);
+            otherFloor.transform.localPosition = transform.localPosition + new Vector3(25.12f, 0, 0f);
 
-            Vector3 spawnPos = new Vector3(other.transform.localPosition.x - floorLength / 2, -1f, 0f);
+            Vector3 spawnPos = new Vector3(otherFloor.transform.localPosition.x - floorLength / 2, -1f, 0f);
             SetUpPoolObjects(numOfSquare, spawnPos);
         }
 	}
@@ -65,6 +62,6 @@ public class FloorScroller : MonoBehaviour {
     bool IsPlayerNearEndFloor()
     {
         return (player.transform.localPosition.x > transform.localPosition.x) &&
-            transform.localPosition.x > other.transform.localPosition.x;
+            transform.localPosition.x > otherFloor.transform.localPosition.x;
     }
 }

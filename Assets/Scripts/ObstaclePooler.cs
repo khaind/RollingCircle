@@ -5,13 +5,10 @@ using UnityEngine;
 public class ObstaclePooler : MonoBehaviour {
     public static ObstaclePooler SharedInstance;
 
-
+    public GameObject player;
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public int amountToPool = 6;
-
-    //public float minDis = 4f;
-    //public float maxDis = 9f;
 
     void Awake()
     {
@@ -24,6 +21,7 @@ public class ObstaclePooler : MonoBehaviour {
         for (int i = 0; i < amountToPool; i++)
         {
             GameObject obj = (GameObject)Instantiate(objectToPool);
+            obj.GetComponent<ObstacleScript>().player = player;
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }
